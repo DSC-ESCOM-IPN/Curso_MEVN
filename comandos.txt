@@ -1,0 +1,10 @@
+npm init
+npm init --yes
+npm config set init.author.name "Your Name"
+npm search "package-name"
+npm install [<@scope>/]<name>@<version>
+npm list
+npm install --save-dev --save-exact prettier
+which nodemon
+nodemon --exec python3 main.py
+curl 
