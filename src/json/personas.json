@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "Javier Hernández",
+        "edad": 34,
+        "carrera": "ISC"
+    },
+    {
+        "nombre": "Ana Ramirez",
+        "edad": 28,
+        "carrera": "IA"
+    }
+]
