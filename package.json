@@ -1,0 +1,25 @@
+{
+  "name": "clase5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon ./server.js",
+    "stop": "lsof -ti :3000 | xargs kill"
+  },
+  "keywords": [],
+  "author": "Jose Rivera",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^26.6.3",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1"
+  }
+}

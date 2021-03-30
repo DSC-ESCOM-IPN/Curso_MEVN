@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Carrera</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if students }}
+      {{#each students}}
+        <tr>
+          <th scope="row">{{@key}}</th>
+          <td>{{this.name}}</td>
+          <td>{{this.career}}</td>
+        </tr>
+      {{/each}}
+    {{/if}}
+  </tbody>
+</table>
+</div>
