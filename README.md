@@ -1,4 +1,6 @@
 # Curso_MEVN
+Lista de recursos para conocer mas de los temas. 
+
 ## Introduccion a DevOps
 - [El concepto de DevOps](https://www.redhat.com/es/topics/devops)
 - [¿Qué es DevOps?](https://azure.microsoft.com/es-mx/overview/what-is-devops/)
@@ -30,8 +32,7 @@
 ### Contenedores
 
 - [OCI](https://opencontainers.org/about/overview/)
-- [A Practical Introduction to Container Terminology
-](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
-- [Don't Panic: Kubernetes and Docker
-](https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/)
-- [MANAGING CONTAINERS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/index)
+- [A Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
+- [Don't Panic: Kubernetes and Docker](https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/)
+- [Play with docker](https://labs.play-with-docker.com/)
+- [Docker labs](https://dockerlabs.collabnix.com/)
