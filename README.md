@@ -2,7 +2,7 @@
 
 ### Construir la imagen del contenedor
 
-Para construir la imagen debemos entrar a la carpeta "nodemon-example" con:
+Para construir la imagen debemos entrar a la carpeta ["nodemon-example"](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase12/nodemon-example) con:
 
 ~~~bash
 cd nodemon-example/
@@ -18,7 +18,7 @@ Esto crea una imagen con la etiqueta "nodemon-example"
 
 ### Iniciar el contenedor con volumenes
 
-Para iniciar el contenedor con el mapeo para sacarle provecho a nodemon, debemos de mapear la carpeta src del host con la carpeta /app/ que se decribe en el Containerfile y como se copió la carpeta src completa, queda en la ruta: /app/src/, la misma que será nuestra ruta destino en el contenedor.
+Para iniciar el contenedor con el mapeo para sacarle provecho a nodemon, debemos de mapear la carpeta src del host con la carpeta /app/ que se decribe en el [Containerfile](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/blob/Clase12/nodemon-example/Containerfile) y como se copió la carpeta src completa, queda en la ruta: /app/src/, la misma que será nuestra ruta destino en el contenedor.
 
 ~~~bash
 podman container run -d -p 3000:3000 -v ./src/:/app/src/ nodemon-example
