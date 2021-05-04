@@ -1,0 +1,30 @@
+{
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "Basic Express app to comunicate with MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSC-ESCOM-IPN/Curso_MEVN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSC-ESCOM-IPN/Curso_MEVN/issues"
+  },
+  "homepage": "https://github.com/DSC-ESCOM-IPN/Curso_MEVN#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
