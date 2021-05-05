@@ -3,6 +3,14 @@ const router = express.Router();
 
 const user = require("../controllers/user.controller");
 
+router.use( function( req, res, next ) {
+    if ( req.query._method == 'DELETE' ) {
+        req.method = 'DELETE';
+        req.url = req.path;
+    }       
+    next(); 
+});
+
 router.post("/user/", user.createUser);
 router.delete("/user/:id", user.deleteUser);
 router.get("/user/all/", user.getUsers);

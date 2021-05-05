@@ -1,6 +1,6 @@
-# Node y MongoDB para trabajar con esquemas flexibles
+# CRUD Mongo y Node
 
-En esta clase transformamos la API vista en la Clase 15 para trabajar con un esquema flexible, utilizando Mongodb Client en vez de Mongoose, para iniciar el ejercicio debes:
+En esta clase tomaremos lo visto en la Clase 6 y en la Clase 15, integrando vistas al CRUD que hicimos de estudiantes, para eso necesitas:
 
 ## Tener listo tu contenedor de mongo corriendo
 
@@ -39,17 +39,3 @@ npm install
 ~~~bash
 npm run dev
 ~~~
-
-## Prueba tus endpoints como más te guste
-
-Ahora debes probar los endpoints, para acceder a ellos la ruta será la de tu host más los definidos en [user.routes.js](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/blob/Clase16/routes/user.routes.js), por ejemplo:
-
-~~~bash
-http://localhost:8080/user/all
-~~~
-
-Puedes probar tus endpoint con alguna de las siguientes herramientas:
-
-- [Curl](https://curl.se/)
-- [Postman](https://www.postman.com/)
-- [Apigee](https://cloud.google.com/apigee/)
