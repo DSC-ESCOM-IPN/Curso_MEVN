@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Posts</h1>
+  {{#if posts }}
+    {{#each posts}}
+    <div class="card">
+      <h5 class="card-header"># {{@key}}</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.text }}</h5>
+      </div>
+    </div>
+    {{/each}}
+  {{else}}
+    No hay posts
+  {{/if}}
+</div>

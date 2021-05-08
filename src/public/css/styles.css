@@ -1,0 +1,12 @@
+.logo{
+    height: auto;
+    width: 10%;
+}
+
+.student{
+    height: auto;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
