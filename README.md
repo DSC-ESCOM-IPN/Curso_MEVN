@@ -39,3 +39,8 @@ npm install
 ~~~bash
 npm run dev
 ~~~
+
+## Las cookies se pueden visualizar en las herramientas de desarrollador en el navegador 
+
+* [Cross-Site Request Forgery (CSRF)](https://www.youtube.com/watch?v=eWEgUcHPle0)
+* [Cross-Site Scripting (XSS)](https://www.youtube.com/watch?v=EoaDgUgS6QA)
