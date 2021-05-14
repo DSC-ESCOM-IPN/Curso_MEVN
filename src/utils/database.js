@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const chalk = require('chalk');
+const config = require('../config');
 
-const DB_USER = process.env.DB_USER || 'node-app';
-const DB_HOST = process.env.DB_HOST || 'localhost';
-const DB_PORT = process.env.DB_PORT || 27017;
-const DB_NAME = process.env.DB_NAME || 'mydb';
-const DB_PASS = process.env.DB_PASS || 'secret';
+const dbOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+};
 
-mongoose
-    .connect(`mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+const db = mongoose
+    .connect(config.MONGODB_URI, dbOptions)
     .then(() =>
       console.log(chalk.blue.bold('Database:'), chalk.green.bold('Connected')),
     )
@@ -16,4 +17,4 @@ mongoose
       console.log(chalk.blue.bold('Database:'), chalk.red.bold('Error\n'), e),
     );
 
-module.exports = mongoose;
+module.exports = db;

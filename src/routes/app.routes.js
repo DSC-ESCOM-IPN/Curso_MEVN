@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // const app = require('../controllers/app.controller');
-const users = require('../controllers/user.controller');
+const posts = require('../controllers/student.controller');
 
-router.get('/', users.getUsers);
-router.get('/addStudent', users.getForm);
+router.get('/', posts.getPosts);
 
 module.exports = router;

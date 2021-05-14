@@ -5,10 +5,10 @@
             <img src="/img/student.png" alt="logo" class="student"/>
             {{#if user}}
             <h1>Modificar estudiante</h1>
-            <form method="POST" action="/user/{{user._id}}?_method=PUT">
+            <form method="POST" action="/student/{{user._id}}?_method=PUT">
             {{else}}
             <h1>Agregar estudiante</h1>
-            <form action="/user/" method="post">
+            <form action="/student/" method="post">
             {{/if}}
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>

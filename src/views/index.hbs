@@ -2,7 +2,8 @@
   <h1>Estudiantes</h1>
   {{#unless isRegularView }}
   <a class="btn btn-primary" href="/addStudent">Agregar Estudiante</a>
-  <a class="btn btn-success" href="/user/regulars/">Filtrar Regulares</a>
+  <a class="btn btn-success" href="/student/regulars/">Filtrar Regulares</a>
+  <a class="btn btn-success" href="/user/logout/">Cerrar Sesion</a>
   {{/unless}}
   <table class="table">
     <thead>
@@ -34,10 +35,10 @@
           <a href="/posts/form/{{this._id}}" class="btn btn-primary">Crear Post</a>
         </td>
         <td>
-          <a href="/user/getUser/{{this._id}}" class="btn btn-light">Modificar</a>
+          <a href="/student/getStudent/{{this._id}}" class="btn btn-light">Modificar</a>
         </td>
         <td>
-          <form method="POST" action="/user/{{this._id}}?_method=DELETE">
+          <form method="POST" action="/student/{{this._id}}?_method=DELETE">
             <button type="submit" class="btn btn-danger">Eliminar</button>
           </form>
         </td>
