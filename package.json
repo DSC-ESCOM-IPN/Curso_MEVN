@@ -1,42 +1,31 @@
 {
-  "name": "node-mongo",
+  "name": "dsc-workshop-2",
   "version": "1.0.0",
-  "description": "Basic Express app to comunicate with MongoDB",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -r dotenv/config src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DSC-ESCOM-IPN/Curso_MEVN.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DSC-ESCOM-IPN/Curso_MEVN/issues"
-  },
-  "homepage": "https://github.com/DSC-ESCOM-IPN/Curso_MEVN#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "chalk": "^3.0.0",
-    "connect-mongo": "^4.4.1",
-    "dotenv": "^8.2.0",
+    "chalk": "^4.1.1",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1",
-    "express-session": "^1.17.1",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.12.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0"
+    "multer": "^1.4.2",
+    "swagger-jsdoc": "^6.0.1",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
+    "eslint": "^7.26.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^26.6.3",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   }
 }
