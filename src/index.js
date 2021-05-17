@@ -56,6 +56,7 @@ app.use('/', require('./routes/student.routes'));
 app.use('/', require('./routes/app.routes'));
 app.use('/', require('./routes/user.routes'));
 
+
 // Running app
 app.listen(app.get('PORT'), () => {
   console.log(

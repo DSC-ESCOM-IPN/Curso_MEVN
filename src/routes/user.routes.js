@@ -3,10 +3,8 @@ const router = express.Router();
 
 const user = require('../controllers/user.controller');
 
-router.get('/user/signup', user.renderSignUpForm);
-router.post('/user/signup', user.singup);
-router.get('/user/signin', user.renderSigninForm);
-router.post('/user/signin', user.signin);
+router.get('/auth/google/redirect', user.redirectGoogle);
 router.get('/user/logout', user.logout);
+router.get('/auth/google', user.signinGoogle);
 
 module.exports = router;

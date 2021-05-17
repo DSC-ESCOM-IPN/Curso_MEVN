@@ -5,6 +5,8 @@ const userController = {};
 
 userController.renderSignUpForm = (req, res) => res.render('users/signup');
 
+userController.renderSigninForm = (req, res) => res.render('users/signin');
+
 userController.singup = async (req, res) => {
   const {name, email, password, confirmPassword} = req.body;
   if (password !== confirmPassword) {
@@ -22,9 +24,11 @@ userController.singup = async (req, res) => {
   }
 };
 
-userController.renderSigninForm = (req, res) => res.render('users/signin');
+userController.signinGoogle = (passport.authenticate('google', {
+  scope: ['profile', 'email'],
+}));
 
-userController.signin = passport.authenticate('local', {
+userController.redirectGoogle = passport.authenticate('google', {
   successRedirect: '/student/all',
   failureRedirect: '/user/signin',
 });
@@ -32,6 +36,7 @@ userController.signin = passport.authenticate('local', {
 userController.logout = (req, res) => {
   req.logout();
   res.redirect('/');
+  // res.redirect('https://mail.google.com/mail/u/0/?logout&hl=en');
 };
 
 module.exports = userController;

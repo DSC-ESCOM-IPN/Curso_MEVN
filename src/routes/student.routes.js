@@ -16,6 +16,7 @@ router.use( function( req, res, next ) {
 });
 
 router.post('/student/', isAuthenticated, student.createStudent);
+router.get('/student/addStudent/', isAuthenticated, student.getForm);
 router.delete('/student/:id', isAuthenticated, student.deleteStudent);
 router.get('/student/all/', isAuthenticated, student.getStudents);
 router.put('/student/:id', isAuthenticated, student.updateStudent);
