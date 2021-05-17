@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    mongodb:
+        image : mongo
+        container_name: mongodb
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=node-app
+            - MONGO_INITDB_ROOT_PASSWORD=secret
+            - MONGO_INITDB_DATABASE=mydb
+        volumes:
+            - ./db:/data/db
+        ports:
+            - 27017:27017
+        restart: unless-stopped
