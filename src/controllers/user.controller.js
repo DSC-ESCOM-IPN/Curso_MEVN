@@ -2,6 +2,7 @@
 const User = require('../models/User.model');
 const chalk = require('chalk');
 const token = require('../utils/token.util');
+const OrderProduct = require('../models/OrderProduct.model');
 require('dotenv').config();
 
 const userController = {};
@@ -52,7 +53,16 @@ userController.login = async(req, res) => {
 }
 
 userController.profile = async(req, res) => {
-    let user = await User.findById(req.userId, ['name', 'email']);
+    console.log(await OrderProduct.find());
+    let user = await User
+        .findById(req.userId, ['name', 'email', 'order'])
+        .populate({
+            path: 'order',
+            populate: {
+                path: 'products'
+            }
+        });
+    console.log(user);
     // No se puede modificar atributos de moongose por lo que lo pasamos a un 
     // objeto plano
     user = user.toObject();

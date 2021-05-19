@@ -56,6 +56,7 @@ require('./utils/database.util');
 app.use(require('./routes/user.routes'));
 app.use(require('./routes/product.routes'));
 app.use(require('./routes/category.routes'));
+app.use(require('./routes/order.routes'));
 
 // Swagger conf
 const options = {
