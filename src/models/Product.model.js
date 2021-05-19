@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const {Schema} = mongoose;
 
 const ProductSchema = new Schema({
   name: {type: String, required: true},
@@ -7,7 +7,7 @@ const ProductSchema = new Schema({
   description: {type: String, required: true},
   cost: {type: Number, required: true},
   image: {type: String, required: true},
-  categories: [{type: mongoose.Schema.Types.ObjectId, ref: 'Category'}]
+  categories: [{type: mongoose.Schema.Types.ObjectId, ref: 'Category'}],
 });
 
 ProductSchema.methods.getImgURL = () => {

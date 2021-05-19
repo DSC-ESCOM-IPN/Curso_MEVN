@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 // Import packages
-const { Router } = require('express');
+const {Router} = require('express');
 
 // import controllers
 const category = require('../controllers/category.controller');

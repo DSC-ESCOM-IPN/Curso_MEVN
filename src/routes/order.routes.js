@@ -1,6 +1,6 @@
-'use stric'
+'use stric';
 // Import packages
-const { Router } = require('express');
+const {Router} = require('express');
 
 // import controllers
 const order = require('../controllers/order.controller');

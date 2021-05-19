@@ -7,9 +7,6 @@ const DB_NAME = process.env.DB_NAME || 'mydb';
 const DB_PASS = process.env.DB_PASS || 'secret';
 
 const configurations = {
-  // URI for docker compose container
-  //MONGODB_URI: `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}?retryWrites=true&w=majority&authSource=admin`,
-  // URI for podman container
   MONGODB_URI: `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}?retryWrites=true&w=majority`,
 };
 module.exports = configurations;

@@ -9,7 +9,7 @@ const UserSchema = new Schema({
   email: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   token: {type: String, required: false, default: null},
-  order: [{type: Schema.Types.ObjectId, ref: 'Order'}]
+  order: [{type: Schema.Types.ObjectId, ref: 'Order'}],
 });
 
 UserSchema.methods.encryptPassword = async (password) => {

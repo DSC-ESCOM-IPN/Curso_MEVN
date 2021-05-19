@@ -1,5 +1,5 @@
 // Import packages
-const { Router } = require('express');
+const {Router} = require('express');
 
 // Import controllers
 const user = require('../controllers/user.controller');
@@ -48,7 +48,7 @@ router.get('/user/profile', token.verify, user.profile);
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/userSignIn'    
+ *                              $ref: '#/components/schemas/userSignIn'
  *                  required: true
  *              responses:
  *                  200:
@@ -98,7 +98,7 @@ router.post('/user/signup', user.signup);
  *                          application/json:
  *                          schema:
  *                              $ref: '#/components/schemas/serverResponse'
- * 
+ *
  */
 router.post('/user/login', user.login);
 
