@@ -13,8 +13,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.9",
     "morgan": "^1.10.0",

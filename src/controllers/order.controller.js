@@ -1,4 +1,3 @@
-'use stric';
 const Product = require('../models/Product.model');
 const OrderProduct = require('../models/OrderProduct.model');
 const Order = require('../models/Order.model');

@@ -3,7 +3,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
+const cors = require('cors');
 const swaggerJsdoc = require('swagger-jsdoc');
+const helmet = require('helmet');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path');
 const chalk = require('chalk');
@@ -19,6 +21,8 @@ app.set('port', 8080);
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(helmet());
+app.use(cors());
 
 // Public folder
 app.use('/productImages', express.static(
@@ -82,7 +86,7 @@ const options = {
       url: 'http://localhost:8080/',
     }],
   },
-  apis: ['./src/routes/*.js'],
+  apis: ['./src/routes/*.yml'],
 };
 const specs = swaggerJsdoc(options);
 app.use(

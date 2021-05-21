@@ -1,0 +1,30 @@
+openapi: 3.0.0
+tags:
+  name: Order
+  description: API para interactura con las categorias
+paths:
+  /order:
+    post:
+      summary: Registra una orden de compra
+      tags: [Order]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postCategorya'
+      responses:
+        200:
+          description: Registra las categorias de los usuarios
+components:
+  schemas:
+    postCategorya:
+      type: object
+      properties:
+        order:
+          type: string
+          format: array
+          description: Arreglo de jsons cada uno con los campos id, total

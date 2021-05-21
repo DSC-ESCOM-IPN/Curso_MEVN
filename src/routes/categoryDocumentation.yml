@@ -1,0 +1,63 @@
+openapi: 3.0.0
+tags:
+  name: Category
+  description: API para interactura con las categorias
+paths:
+  /category:
+    get:
+      summary: Muestra las categorias disponibles
+      tags: [Category]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      responses:
+        200:
+          description: Regresa las categorias registradas
+    post:
+      summary: Registra una categoria
+      tags: [Category]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postCategorya'
+      responses:
+        200:
+          description: Categoria registrada
+    delete:
+      summary: Elimina una categoria
+      tags: [Category]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteCategorya'
+      responses:
+        200:
+          description: Categoria eliminada
+components:
+  schemas:
+    postCategorya:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre de la categoria
+        description:
+          type: string
+          description: Descripcion de la categoria
+    deleteCategorya:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id de la categoria

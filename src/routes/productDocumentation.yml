@@ -1,0 +1,75 @@
+openapi: 3.0.0
+tags:
+  name: Product
+  description: API para interactura con los productos
+paths:
+  /product:
+    get:
+      summary: Muestra los productos disponibles
+      tags: [Product]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      responses:
+        description: Arreglo de los productos disponibles
+    post:
+      summary: Registra un producto
+      tags: [Product]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      requestBody:
+        content: 
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                stock:
+                  type: number
+                description:
+                  type: string
+                cost:
+                  type: number
+                categories:
+                  type: string
+                  description: Array of categories separeted by commas
+                image:
+                  type: string
+                  format: image
+    delete:
+      summary: Elimina un producto
+      tags: [Product]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteCategorya'
+      responses:
+        200:
+          description: Producto eliminada
+  /product?id=:
+    get:
+      summary: Muestra un producto por id
+      tags: [Product]
+      parameters:
+        - in: header
+          name: token
+          type: string
+      responses:
+        description: Muestra un producto
+components:
+  schemas:
+    deleteCategorya:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id de la categoria
