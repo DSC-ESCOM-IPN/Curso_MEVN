@@ -86,7 +86,7 @@ const options = {
       url: 'http://localhost:8080/',
     }],
   },
-  apis: ['./src/routes/*.yml'],
+  apis: ['./src/documentation/*.yml'],
 };
 const specs = swaggerJsdoc(options);
 app.use(
