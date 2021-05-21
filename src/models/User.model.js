@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const {Schema} = mongoose;
 mongoose.set('useCreateIndex', true);
 const bcrypt = require('bcryptjs');
-const Order = require('./Order.model');
 
 const UserSchema = new Schema({
   name: {type: String, required: true},
