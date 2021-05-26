@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Uso de directivas</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="checkbox" name="Logo Toogle" id="toggle" @change="toggleVueLogo"/>
+            <div v-html="vueLogo" @mouseover="showEvent"></div>
+            <p v-show="vueLogo">Vue JS</p>
+            <p v-if="vueLogo">El logo de Vue JS está en la página</p>
+            <p v-else="vueLogo">El logo de Vue JS no está en la página</p>
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+
+</html>

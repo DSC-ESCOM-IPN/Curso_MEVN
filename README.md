@@ -1,19 +1,19 @@
-# Introducción a Vue JS
+# Directivas, eventos y estructuras en Vue JS
 
-En esta clase abordamos la introducción del Framework de desarrollo VueJS
+En esta clase seguiremos trabajando con el framework de Vue JS, hablando sobre directivas, eventos y algunas estructuras de datos.
 
 ## Recomendaciones
-- Instalar las [Vue Devtools](https://github.com/vuejs/vue-devtools) en tu navegador.
-- Tener un servidor web ativo, puedes ocupar el paquete [serve](https://www.npmjs.com/package/serve).
+- Instalar las [Vue Devtools](https://v3.vuejs.org/guide/installation.html#vue-devtools) para Vue 3 en tu navegador.
+- Tener un servidor web activo, puedes ocupar el paquete [serve](https://www.npmjs.com/package/serve).
 
 ## Contenido
 
 Hay 4 ejemplos tomados en clase:
-- [HelloWorld](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase25/HelloWorld): Aplicación básica de un mensaje de hola mundo desde vue
-- [ListBindingJS](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase25/ListBindingJS): Ejemplo de cambios en el DOM mediante JS
-- [ListBindingVue](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase25/ListBindingVue): Ejemplo de cambios en el DOM mediante Vue
-- [SimpleBinding](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase25/SimpleBinding): Ejemplo simple del enlace de datos con Vue JS
+- [ArrayExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/ArrayExample): Ejemplo de binding y eventos con una lista
+- [ObjectExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/ObjectExample): Ejemplo de binding y eventos con un objeto
+- [MixedExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/MixedExample): Ejemplo de binding y eventos con una lista de objetos
+- [Directives](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/Directives): Ejemplo que aborda distintas directivas en Vue
 
-## Presentación de la clase
+## Sigue los videos de las clases
 
-La presentación está en el drive del DSC, puedes verla [aquí](https://drive.google.com/file/d/10UJNzN-6DnLxAjCpN6Efe4UDbVKVgNfa/view?usp=sharing)
+[Lista de reproducción](https://www.youtube.com/watch?v=aabUBH2X6sU&list=PLGq0oojVfS53AjzCUHnvYZ8PnNJ6oM7CI)
