@@ -1,0 +1,19 @@
+#app {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+input,
+button {
+  width: 50%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0.5em;
+  padding: 1em;
+}
+
+button {
+    font-size: medium;
+}

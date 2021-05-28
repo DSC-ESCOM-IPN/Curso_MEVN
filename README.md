@@ -1,6 +1,8 @@
-# Directivas, eventos y estructuras en Vue JS
+# Filtros, propiedades computadas y class binding en Vue JS
 
-En esta clase seguiremos trabajando con el framework de Vue JS, hablando sobre directivas, eventos y algunas estructuras de datos.
+En esta clase revisaremos más binding y eventos, además, empezaremos a ver que son los filtros en Vue 2 y como implementar una versión similar en Vue 3 con propiedades computadas.
+
+Finalmente, se plantea un ejemplo de class binding para dibujar un tablero de ajedrez
 
 ## Recomendaciones
 - Instalar las [Vue Devtools](https://v3.vuejs.org/guide/installation.html#vue-devtools) para Vue 3 en tu navegador.
@@ -8,11 +10,10 @@ En esta clase seguiremos trabajando con el framework de Vue JS, hablando sobre d
 
 ## Contenido
 
-Hay 4 ejemplos tomados en clase:
-- [ArrayExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/ArrayExample): Ejemplo de binding y eventos con una lista
-- [ObjectExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/ObjectExample): Ejemplo de binding y eventos con un objeto
-- [MixedExample](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/MixedExample): Ejemplo de binding y eventos con una lista de objetos
-- [Directives](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase26/Directives): Ejemplo que aborda distintas directivas en Vue
+Hay 3 ejemplos tomados en clase:
+- [Filters](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase27/Filters): Ejemplo de filtros con observadores aplicado en un formulario de alumnos
+- [ComputedProps](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase27/ComputedProps): Ejemplo de filtros creado con propiedades computables
+- [ChessBoard](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase27/ChessBoard): Ejemplo de class binding donde creamos un tablero de ajedrez
 
 ## Sigue los videos de las clases
 
