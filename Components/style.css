@@ -6,12 +6,11 @@
 
 input,
 button {
-  width: 50%;
+  width: 75%;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin: 0.5em;
-  padding: 1em;
 }
 
 button {
