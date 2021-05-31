@@ -57,11 +57,12 @@ const app = Vue.createApp({
         }
     },
     watch: {
-        name(){
+        name() {
             this.name = this.capname2;
         },
-        product(){
-            this.product = this.capitalize;
+        product(current) {
+            if (current.length <= 1)
+                this.product = this.capitalize;
         }
     }
 }).mount('#app');
