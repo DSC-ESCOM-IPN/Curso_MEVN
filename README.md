@@ -1,6 +1,6 @@
-# Componentes, Life Cycle y Vue CLI
+# Validación de formularios e i18n
 
-En esta clase revisaremos como crear componenetes en Vue 3, abordando su ciclo de vida y como estructurar un nuevo proyecto Vue con la CLI.
+En esta clase revisaremos como validar los formularios mientras incorporamos un framework de UI e internacionalizamos nuestra aplicación
 
 ## Recomendaciones
 - Instalar las [Vue Devtools](https://v3.vuejs.org/guide/installation.html#vue-devtools) para Vue 3 en tu navegador.
@@ -9,13 +9,7 @@ En esta clase revisaremos como crear componenetes en Vue 3, abordando su ciclo d
 
 ## Contenido
 
-Hay 2 ejemplos tomados en clase:
-- [Components](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase28/Components): Ejemplo de componentes para la aplicación de venta
-- [salesapp](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase28/salesapp): Ejemplo creado con Vue CLI
-
-## Presentacion de la clase
-
-- [Vue Components](https://drive.google.com/file/d/1KxC9wZtl84CodFLgsYeb_iPyFcvpEuII/view?usp=sharing)
+- [salesapp](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase29/salesapp): Continuación de la aplicación de ventas incorporando lo mencionado.
 
 ## Sigue los videos de las clases
 
