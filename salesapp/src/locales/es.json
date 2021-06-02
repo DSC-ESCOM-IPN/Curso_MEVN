@@ -1,0 +1,24 @@
+{
+    "sales": {
+        "title": "Aplicación de ventas",
+        "btn-form": "Mostrar Formulario",
+        "btn-table": "Mosrar Tabla",
+        "form": {
+            "title": "Registro de ventas",
+            "btn-submit": "Registrar venta",
+            "name-label": "Nombre del vendedor",
+            "product-label": "Nombre del producto",
+            "price-label": "Precio del producto",
+            "date-label": "Fecha de venta",
+            "required-label": "Requerido",
+            "length-validation": "Debes ingresar {num} caracteres como mínimo",
+            "validation-msg": "Revisa que las entradas sean correctas"
+        },
+        "table": {
+            "seller-col": "Vendedor",
+            "product-col": "Producto",
+            "price-col": "Precio",
+            "date-col": "Fecha"
+        }
+    }
+}

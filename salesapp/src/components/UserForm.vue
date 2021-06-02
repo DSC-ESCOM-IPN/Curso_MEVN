@@ -1,59 +1,73 @@
 <template>
-  <div>
-    <h2 v-once>{{ tittle }}</h2>
-    <div class="row">
-      <div class="col">
-        <input
+  <el-form ref="form" label-width="20%">
+    <h2 v-once>{{ $t("sales.form.title") }}</h2>
+    <el-row>
+      <el-col>
+        <custom-input
+          :label="$t('sales.form.name-label')"
+          name="name"
+          modifier="capname"
+          :rules="{ required: true, min: 5 }"
+          @update="update"
           type="text"
-          class="form-control"
-          placeholder="Nombre"
-          v-model="name"
         />
-      </div>
-      <div class="col">
-        <input
+      </el-col>
+      <el-col>
+        <custom-input
+          :label="$t('sales.form.product-label')"
+          name="product"
+          modifier="capitalize"
+          :rules="{ required: true, min: 5 }"
+          @update="update"
           type="text"
-          class="form-control"
-          placeholder="Producto"
-          v-model="product"
         />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <input
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <custom-input
+          :label="$t('sales.form.date-label')"
+          name="date"
+          :rules="{ required: true }"
+          @update="update"
           type="date"
-          class="form-control"
-          placeholder="Fecha de venta"
-          v-model="date"
         />
-      </div>
-      <div class="col">
-        <input
+      </el-col>
+      <el-col>
+        <custom-input
+          :label="$t('sales.form.price-label')"
+          name="cost"
+          :rules="{ required: true }"
+          @update="update"
           type="number"
-          class="form-control"
-          placeholder="Precio"
-          v-model.number="cost"
-          @keyup.enter="registerSale()"
         />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <button class="btn btn-primary" @click="registerSale()">
-          {{ btnText }}
-        </button>
-      </div>
-    </div>
-  </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <custom-button
+          :label="$t('sales.form.btn-submit')"
+          type="warning"
+          @click.prevent="registerSale()"
+          :disabled="!valid"
+        />
+      </el-col>
+    </el-row>
+  </el-form>
 </template>
 
 <script>
 import moment from "moment";
 import accounting from "accounting-js";
+import CustomInput from "./CustomInput";
+import CustomButton from "./CustomButton.vue";
 
 export default {
   name: "UserForm",
+  components: {
+    CustomInput,
+    CustomButton,
+  },
   props: {
     sales: {
       type: Array,
@@ -62,83 +76,77 @@ export default {
   },
   data() {
     return {
-      tittle: "Registro de ventas",
-      btnText: "Registrar Venta",
-      name: "",
-      cost: 0,
-      date: "",
-      product: "",
+      name: {
+        value: "",
+        valid: false,
+      },
+      cost: {
+        value: 0,
+        valid: false,
+      },
+      date: {
+        value: "",
+        valid: false,
+      },
+      product: {
+        value: "",
+        valid: false,
+      },
     };
   },
   methods: {
     registerSale() {
+      if (!this.valid) {
+        alert(this.$t('sales.form.validation-msg'));
+        return;
+      }
       this.$emit("add-sale", {
-        name: this.name,
+        name: this.name.value,
         date: this.saledate,
         cost: this.currency,
-        product: this.product,
+        product: this.product.value,
       });
-      this.cost = 0;
-      this.name = "";
-      this.date = "";
-      this.product = "";
+      this.cleanState();
+    },
+    update(payload) {
+      console.log(payload);
+      this[payload.name].value = payload.value;
+      this[payload.name].valid = payload.valid;
+    },
+    cleanState() {
+      this.cost = {
+        value: 0,
+        valid: false,
+      };
+      this.name = {
+        value: "",
+        valid: false,
+      };
+      this.date = {
+        value: "",
+        valid: false,
+      };
+      this.product = {
+        value: "",
+        valid: false,
+      };
     },
   },
   computed: {
-    capitalize() {
-      return this.product.charAt(0).toUpperCase() + this.product.slice(1);
-    },
-    capname2() {
-      let space = true;
-      let final = [];
-      for (let i = 0; i < this.name.length; i++) {
-        if (space) {
-          final.push(this.name[i].toUpperCase());
-        } else {
-          final.push(this.name[i]);
-        }
-        space = this.name[i] === " ";
-      }
-      return final.join("");
+    valid() {
+      return (
+        this.name.valid &&
+        this.cost.valid &&
+        this.date.valid &&
+        this.product.valid
+      );
     },
     currency() {
-      return accounting.formatMoney(this.cost);
+      return accounting.formatMoney(this.cost.value);
     },
     saledate() {
-      return moment(this.date).format("MMMM Do YYYY");
+      return moment(this.date.value).format("MMMM Do YYYY");
     },
-  },
-  watch: {
-    name() {
-      this.name = this.capname2;
-    },
-    product(current) {
-      if (current.length <= 1) this.product = this.capitalize;
-    },
-  },
-  beforeCreate() {
-    console.log("Form: beforeCreate()");
-  },
-  created() {
-    console.log("Form: created()");
-  },
-  beforeMount() {
-    console.log("Form: beforeMount()");
-  },
-  mounted() {
-    console.log("Form: mounted()");
-  },
-  beforeUpdate() {
-    console.log("Form: beforeUpdate()");
-  },
-  updated() {
-    console.log("Form: updated()");
-  },
-  beforeUnmount() {
-    console.log("Form: beforeUnmount()");
-  },
-  unmounted() {
-    console.log("Form: unmounted()");
   },
 };
 </script>

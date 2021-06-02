@@ -1,24 +1,10 @@
 <template>
-  <div class="table-responsive">
-    <table class="table table-light table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Seller</th>
-          <th scope="col">Product</th>
-          <th scope="col">Price</th>
-          <th scope="col">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-bind:key="index" v-for="(item, index) in sales">
-          <td scope="row">{{ item.name }}</td>
-          <td>{{ item.product }}</td>
-          <td>{{ item.cost }}</td>
-          <td>{{ item.date }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <el-table :data="sales" border style="width: 100%">
+    <el-table-column prop="name" :label="$t('sales.table.seller-col')"> </el-table-column>
+    <el-table-column prop="product" :label="$t('sales.table.product-col')"> </el-table-column>
+    <el-table-column prop="cost" :label="$t('sales.table.price-col')"> </el-table-column>
+    <el-table-column prop="date" :label="$t('sales.table.date-col')"> </el-table-column>
+  </el-table>
 </template>
 
 <script>
@@ -29,30 +15,6 @@ export default {
       type: Array,
       required: true,
     },
-  },
-  beforeCreate() {
-    console.log("Table: beforeCreate()");
-  },
-  created() {
-    console.log("Table: created()");
-  },
-  beforeMount() {
-    console.log("Table: beforeMount()");
-  },
-  mounted() {
-    console.log("Table: mounted()");
-  },
-  beforeUpdate() {
-    console.log("Table: beforeUpdate()");
-  },
-  updated() {
-    console.log("Table: updated()");
-  },
-  beforeUnmount() {
-    console.log("Table: beforeUnmount()");
-  },
-  unmounted() {
-    console.log("Table: unmounted()");
   },
 };
 </script>

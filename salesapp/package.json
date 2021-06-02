@@ -10,8 +10,10 @@
   "dependencies": {
     "accounting-js": "^1.1.1",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.45",
     "moment": "^2.29.1",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

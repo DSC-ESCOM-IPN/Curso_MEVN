@@ -1,0 +1,24 @@
+{
+    "sales": {
+        "title": "Sales app",
+        "btn-form": "Show Form",
+        "btn-table": "Show Table",
+        "form": {
+            "title": "Sales Register",
+            "btn-submit": "Register Sale",
+            "name-label": "Seller name",
+            "product-label": "Product name",
+            "price-label": "Product price",
+            "date-label": "Sell date",
+            "required-label": "Required",
+            "length-validation": "You must enter {num} characters minimum",
+            "validation-msg": "Check your inputs to be correct"
+        },
+        "table": {
+            "seller-col": "Seller",
+            "product-col": "Product",
+            "price-col": "Price",
+            "date-col": "Date"
+        }
+    }
+}
