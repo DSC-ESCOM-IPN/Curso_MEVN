@@ -10,6 +10,8 @@
           :rules="{ required: true, min: 5 }"
           @update="update"
           type="text"
+          icon="el-icon-user-solid"
+          class="w-80"
         />
       </el-col>
       <el-col>
@@ -20,6 +22,8 @@
           :rules="{ required: true, min: 5 }"
           @update="update"
           type="text"
+          icon="el-icon-s-goods"
+          class="w-80"
         />
       </el-col>
     </el-row>
@@ -31,6 +35,7 @@
           :rules="{ required: true }"
           @update="update"
           type="date"
+          class="w-80"
         />
       </el-col>
       <el-col>
@@ -40,6 +45,7 @@
           :rules="{ required: true }"
           @update="update"
           type="number"
+          class="w-80"
         />
       </el-col>
     </el-row>
@@ -68,12 +74,6 @@ export default {
     CustomInput,
     CustomButton,
   },
-  props: {
-    sales: {
-      type: Array,
-      required: true,
-    },
-  },
   data() {
     return {
       name: {
@@ -97,10 +97,11 @@ export default {
   methods: {
     registerSale() {
       if (!this.valid) {
-        alert(this.$t('sales.form.validation-msg'));
+        alert(this.$t("sales.form.validation-msg"));
         return;
       }
       this.$emit("add-sale", {
+        id: this.$store.state.sales.length,
         name: this.name.value,
         date: this.saledate,
         cost: this.currency,
@@ -109,7 +110,6 @@ export default {
       this.cleanState();
     },
     update(payload) {
-      console.log(payload);
       this[payload.name].value = payload.value;
       this[payload.name].valid = payload.valid;
     },
@@ -153,4 +153,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.w-80 {
+  width: 80%;
+  height: auto;
+}
 </style>

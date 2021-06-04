@@ -19,10 +19,10 @@
     </el-row>
     <el-row>
       <el-col :span="12">
-        <UserForm v-if="showForm" :sales="sales" @add-sale="addSale" />
+        <UserForm v-if="showForm" @add-sale="addSale" />
       </el-col>
       <el-col :span="12">
-        <UserTable v-if="showTable" :sales="sales" />
+        <UserTable v-if="showTable"/>
       </el-col>
     </el-row>
   </div>
@@ -44,12 +44,11 @@ export default {
     return {
       showForm: true,
       showTable: true,
-      sales: [],
     };
   },
   methods: {
     addSale(newsale) {
-      this.sales.push(newsale);
+      this.$store.dispatch('addSale',newsale)
     },
   },
 };

@@ -14,7 +14,7 @@ function loadLocaleMessages() {
 }
 
 export default createI18n({
-    locale: 'en',
+    locale: 'es',
     fallbackLocale: 'en',
     messages: loadLocaleMessages()
 })

@@ -1,15 +1,14 @@
 <template>
-  <sales />
+  <div id="nav">
+    <router-link to="/">Login</router-link> |
+    <router-link to="/sales">Sales</router-link>
+  </div>
+  <router-view />
 </template>
 
 <script>
-import Sales from "./views/Sales";
-
 export default {
   name: "App",
-  components: {
-    Sales,
-  },
 };
 </script>
 
@@ -18,5 +17,18 @@ export default {
   width: 100%;
   height: auto;
   text-align: center;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

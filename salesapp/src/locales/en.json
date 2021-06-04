@@ -20,5 +20,22 @@
             "price-col": "Price",
             "date-col": "Date"
         }
+    },
+    "sale": {
+        "title": "Sale View",
+        "view": {
+            "title": "Sale {id}",
+            "product": "Name Product:",
+            "name": "Seller Name:",
+            "price": "Product Price:",
+            "date": "Sell Date:"
+        }
+    },
+    "login": {
+        "title": "Login",
+        "password-placeholder": "Password",
+        "username-placeholder": "Username",
+        "forgot-pwd": "Forgot password ?",
+        "submitbtn": "Login"
     }
 }

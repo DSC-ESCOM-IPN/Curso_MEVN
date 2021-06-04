@@ -3,14 +3,17 @@
     <div class="error">{{ error }}</div>
     <el-form-item :label="label">
       <el-input
-        v-if="type === 'text'"
+        v-if="type === 'text' || type === 'password'"
         v-model="value"
         @input="input"
+        :prefix-icon="icon"
+        :show-password="type==='password'"
       ></el-input>
       <el-input-number
         v-else-if="type === 'number'"
         v-model.number="value"
         @input="input"
+        :prefix-icon="icon"
       ></el-input-number>
       <el-date-picker
         v-else-if="type === 'date'"
@@ -18,6 +21,7 @@
         @change="input"
         type="date"
         placeholder="Selecciona una fecha"
+        :prefix-icon="icon"
       ></el-date-picker>
     </el-form-item>
   </div>
@@ -43,6 +47,9 @@ export default {
       required: true,
     },
     modifier: {
+      type: String,
+    },
+    icon: {
       type: String,
     },
   },
@@ -113,7 +120,7 @@ export default {
 
 <style scoped>
 .input-wrapper {
-  width: 80%;
+  width: 100%;
 }
 
 .error {

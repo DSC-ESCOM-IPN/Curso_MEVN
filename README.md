@@ -1,6 +1,6 @@
-# Validación de formularios e i18n
+# Vuex y Vue Router
 
-En esta clase revisaremos como validar los formularios mientras incorporamos un framework de UI e internacionalizamos nuestra aplicación
+En esta clase aprenderemos que es el estado de la aplicación y cómo utilizar rutas en Vue
 
 ## Recomendaciones
 - Instalar las [Vue Devtools](https://v3.vuejs.org/guide/installation.html#vue-devtools) para Vue 3 en tu navegador.
@@ -9,7 +9,7 @@ En esta clase revisaremos como validar los formularios mientras incorporamos un 
 
 ## Contenido
 
-- [salesapp](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase29/salesapp): Continuación de la aplicación de ventas incorporando lo mencionado.
+- [salesapp](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase30/salesapp): Evolución de la app, teniendo tres vistas que se accederan por medio de rutas y las ventas estarán almacenadas en el estado de la aplicación
 
 ## Sigue los videos de las clases
 

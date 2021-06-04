@@ -20,5 +20,22 @@
             "price-col": "Precio",
             "date-col": "Fecha"
         }
+    },
+    "sale": {
+        "title": "Vista de venta",
+        "view": {
+            "title": "Vneta {id}",
+            "product": "Nombre del producto:",
+            "name": "Nombre del vededor:",
+            "price": "Precio del producto:",
+            "date": "Fecha de venta:"
+        }
+    },
+    "login": {
+        "title": "Inicio de sesión",
+        "password-placeholder": "Contraseña",
+        "username-placeholder": "Nombre de usuario",
+        "forgot-pwd": "¿Olvidaste tú contraseña?",
+        "submitbtn": "Iniciar sesión"
     }
 }
