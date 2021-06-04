@@ -37,5 +37,9 @@
         "username-placeholder": "Username",
         "forgot-pwd": "Forgot password ?",
         "submitbtn": "Login"
+    },
+    "nav":{
+        "nav.login-label": "Login",
+        "nav.sales-label": "Sales"
     }
 }

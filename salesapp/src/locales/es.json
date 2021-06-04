@@ -37,5 +37,9 @@
         "username-placeholder": "Nombre de usuario",
         "forgot-pwd": "¿Olvidaste tú contraseña?",
         "submitbtn": "Iniciar sesión"
+    },
+    "nav":{
+        "nav.login-label": "Inicio de Sesión",
+        "nav.sales-label": "Ventas"
     }
 }

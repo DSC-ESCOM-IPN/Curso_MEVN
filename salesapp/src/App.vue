@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link to="/">Login</router-link> |
-    <router-link to="/sales">Sales</router-link>
+    <router-link to="/">{{$t('nav.login-label')}}</router-link> |
+    <router-link to="/sales">{{$t('nav.sales-label')}}</router-link>
   </div>
   <router-view />
 </template>
