@@ -87,8 +87,8 @@ export default {
       await this.simulateLogin();
       this.loading = false;
       if (
-        this.model.username.value === this.validCredentials.username &&
-        this.model.password.value === this.validCredentials.password
+        this.username.value === this.validCredentials.username &&
+        this.password.value === this.validCredentials.password
       ) {
         this.$message.success("Login successfull");
       } else {

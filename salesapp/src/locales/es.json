@@ -39,7 +39,7 @@
         "submitbtn": "Iniciar sesión"
     },
     "nav":{
-        "nav.login-label": "Inicio de Sesión",
-        "nav.sales-label": "Ventas"
+        "login-label": "Inicio de Sesión",
+        "sales-label": "Ventas"
     }
 }

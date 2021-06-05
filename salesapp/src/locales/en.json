@@ -39,7 +39,7 @@
         "submitbtn": "Login"
     },
     "nav":{
-        "nav.login-label": "Login",
-        "nav.sales-label": "Sales"
+        "login-label": "Login",
+        "sales-label": "Sales"
     }
 }
