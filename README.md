@@ -1,41 +1,20 @@
-# CRUD Mongo y Node
+# Aplicación final de carrito de compra
 
-En esta clase tomaremos lo visto en la Clase 6 y en la Clase 15, integrando vistas al CRUD que hicimos de estudiantes, para eso necesitas:
+En estas tres clases veremos como hacer un carrito de compra básico, utilizando nuestra API finalizada en la clase 24
 
-## Tener listo tu contenedor de mongo corriendo
+## Recomendaciones
 
-Remplaza <your-mongo-container-id> con el ID de tu contenedor
+- Conocer la [API](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase22-23-24) que se hizo en el curso.
+- Instalar las [Vue Devtools](https://v3.vuejs.org/guide/installation.html#vue-devtools) para Vue 3 en tu navegador.
+- Tener un servidor web activo, puedes ocupar el paquete [serve](https://www.npmjs.com/package/serve).
+- Tener [node](https://nodejs.org/es/) instalado.
 
-~~~bash
-podman container start <your-mongo-container-id>
-~~~
+## Contenido
 
-Para ver el id de tu contenedor puedes ejecutar:
+- [api](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase31-32-33/api): Contiene el código final de la API hecha en Express
 
-~~~bash
-podman ps -a
-~~~
+- [web](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase31-32-33/web): Contiene el código de la aplicación en Vue del carrito de compra
 
+## Sigue los videos de las clases
 
-## Modificar el archivo .env con tus datos
-
-Remplaza los valores encerrados en "<>" con los valores de tu servidor de mongo
-
-~~~bash
-DB_USER=<your-username>
-DB_HOST=<your-host>
-DB_PORT=<your-port>
-DB_NAME=<your-db-name>
-DB_PASS=<your-password>
-~~~
-
-## Instala las dependencias del projecto
-
-~~~bash
-npm install
-~~~
-
-## Corre el projecto como ambiente de desarrollo
-~~~bash
-npm run dev
-~~~
+[Lista de reproducción](https://www.youtube.com/watch?v=aabUBH2X6sU&list=PLGq0oojVfS53AjzCUHnvYZ8PnNJ6oM7CI)

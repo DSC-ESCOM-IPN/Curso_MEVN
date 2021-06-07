@@ -16,7 +16,7 @@ require('dotenv').config();
 const app = express();
 
 // Settings
-app.set('port', 8080);
+app.set('port', 5000);
 
 // Middlewares
 app.use(morgan('dev'));
