@@ -7,6 +7,8 @@
         <ul>
           <li>
             <cart-item />
+          </li>
+          <li>
             <cart-item />
           </li>
         </ul>
