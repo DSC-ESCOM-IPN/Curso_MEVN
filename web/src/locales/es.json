@@ -16,7 +16,8 @@
         "name-placeholder": "Nombre",
         "submitbtn": "Registrarse",
         "login-msg": "¿Ya tienes una cuenta? ",
-        "login-link": "Inicia Sesión"
+        "login-link": "Inicia Sesión",
+        "psswd-err": "Las contraseñas deben coincidir"
     },
     "custom-input": {
         "required-label": "Requerido",
@@ -49,7 +50,7 @@
         "title": "Carrito de compras",
         "pay": "Pagar"
     },
-    "order":{
+    "order": {
         "item-label": "Orden de {date}",
         "image-label": "Imagen",
         "name-label": "Nombre de Producto",

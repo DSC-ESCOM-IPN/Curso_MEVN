@@ -50,6 +50,7 @@ userController.login = async (req, res) => {
         .catch((err) => console.log(chalk.bold.red('Error:'), err));
     res.status(200).header({token: newToken}).json({
       server: 'Inicio de sesion exitoso',
+      token: newToken,
     });
   }
 };

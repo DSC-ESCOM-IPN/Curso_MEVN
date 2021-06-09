@@ -2,15 +2,13 @@
   <el-col :span="8">
     <el-card :body-style="{ padding: '0px' }">
       <img
-        src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+        :src="img_url"
         class="image"
       />
       <div style="padding: 14px">
-        <span>--Product Name--</span>
+        <span>{{ name }}</span>
         <div class="bottom">
-          <span
-            >{{ $t("products.price") }}{{ $n(200, "currency") }}</span
-          >
+          <span>{{ $t("products.price") }}{{ $n(cost, "currency") }}</span>
           <custom-button
             :label="$t('products.add-to-cart')"
             type="warning"
@@ -26,11 +24,25 @@ import CustomButton from "./CustomButton.vue";
 export default {
   components: { CustomButton },
   name: "Product",
+  props: {
+    name: {
+      typre: String,
+      required: true,
+    },
+    cost: {
+      typre: Number,
+      required: true,
+    },
+    img_url: {
+      type: String,
+      required: true
+    }
+  },
 };
 </script>
  
 <style scoped>
-img{
+img {
   width: 80%;
   height: 325px;
 }

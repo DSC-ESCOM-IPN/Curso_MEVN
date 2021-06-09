@@ -9,6 +9,25 @@ En estas tres clases veremos como hacer un carrito de compra básico, utilizando
 - Tener un servidor web activo, puedes ocupar el paquete [serve](https://www.npmjs.com/package/serve).
 - Tener [node](https://nodejs.org/es/) instalado.
 
+## Requisitos
+
+Para iniciar la aplicación más rápido debes de cargar la copia de seguridad de la base de datos que tenemos en el repositorio, puedes hacerlo de la sigueinte manera:
+
+- Conectarse a la base de datos
+~~~bash
+mongo --username <your-user> --password <your-password> --authenticationDatabase mydb --host <your-host> --port 27017
+~~~
+
+- Cargar la copia de seguridad
+~~~bash
+mongorestore --uri="mongodb://<your-user>:<your-password>@<your-host>/mydb" ./db
+~~~
+
+- Crear nueva copia de seguridad (opcional)
+~~~bash
+mongodump -u vue-app -p dsc-escom-ipn -h 34.68.51.65:27017 -d mydb -o ./db
+~~~
+
 ## Contenido
 
 - [api](https://github.com/DSC-ESCOM-IPN/Curso_MEVN/tree/Clase31-32-33/api): Contiene el código final de la API hecha en Express

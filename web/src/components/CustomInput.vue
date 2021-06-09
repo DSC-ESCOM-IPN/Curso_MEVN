@@ -24,7 +24,7 @@
         :prefix-icon="icon"
       ></el-date-picker>
       <div v-if="type === 'email'" class="el-input el-input--prefix" data-v-051ef74e="">
-        <input class="el-input__inner" type="email" autocomplete="off" /><span
+        <input v-model="value" @input="input" class="el-input__inner" type="email" autocomplete="off" /><span
           class="el-input__prefix"
           ><i class="el-input__icon" :class="icon"></i
         ></span>

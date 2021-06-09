@@ -2,7 +2,7 @@
   <div class="signup">
     <el-card>
       <h2>{{ $t("signup.title") }}</h2>
-      <el-form class="signup-form" ref="form">
+      <el-form class="signup-form" ref="form" @submit.prevent="register">
         <el-row>
           <el-col :span="11">
             <el-form-item prop="name">
@@ -50,6 +50,9 @@
             </el-form-item>
           </el-col>
         </el-row>
+        <div v-if="password_error" class="error">
+          {{ $t("signup.psswd-err") }}
+        </div>
         <el-form-item>
           <el-button
             :loading="loading"
@@ -71,6 +74,8 @@
 
 <script>
 import CustomInput from "./CustomInput";
+import { registerUser } from "../utils/auth";
+
 export default {
   name: "SignupForm",
   components: {
@@ -78,10 +83,6 @@ export default {
   },
   data() {
     return {
-      validCredentials: {
-        email: "dsc-escom-ipn",
-        password: "password",
-      },
       name: {
         value: "",
         valid: false,
@@ -98,12 +99,18 @@ export default {
         value: "",
         valid: false,
       },
+      password_error: false,
       loading: false,
     };
   },
   computed: {
     valid() {
-      return this.password.valid && this.email.valid;
+      return (
+        this.password.valid &&
+        this.email.valid &&
+        this.passwordConfirm.valid &&
+        this.name.valid
+      );
     },
   },
   methods: {
@@ -111,11 +118,44 @@ export default {
       this[payload.name].value = payload.value;
       this[payload.name].valid = payload.valid;
     },
+    validPasswords() {
+      this.password_error = !(
+        this.passwordConfirm.value === this.password.value
+      );
+      return this.password_error;
+    },
+    async register() {
+      if (this.validPasswords() || !this.valid) {
+        alert("Revisa los datos ingresados");
+        return;
+      }
+      try {
+        this.loading = true;
+        const res = await registerUser({
+          name: this.name.value,
+          email: this.email.value,
+          password: this.password.value,
+          confirmPassword: this.passwordConfirm.value,
+        });
+        console.log(res);
+        this.loading = false;
+        if (res.data.server === "Usuario registrado" && res.status === 200) {
+          alert("Registrado correctamente!");
+          this.$router.push("/login");
+          return;
+        }
+
+        alert("Ha ocurrido un error, intenta más tarde");
+        throw new Error(res.data.server);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .signup {
   flex: 1;
@@ -181,5 +221,9 @@ a:focus {
   width: 630px;
   display: flex;
   justify-content: center;
+}
+.error {
+  text-align: center;
+  color: red;
 }
 </style>

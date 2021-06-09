@@ -16,7 +16,8 @@
         "name-placeholder": "Name",
         "submitbtn": "Signup",
         "login-msg": "An account already? ",
-        "login-link": "login"
+        "login-link": "login",
+        "psswd-err": "Passwords must match"
     },
     "custom-input": {
         "required-label": "Required",

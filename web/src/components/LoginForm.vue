@@ -2,7 +2,7 @@
   <div class="login">
     <el-card>
       <h2>{{ $t("login.title") }}</h2>
-      <el-form class="login-form" ref="form">
+      <el-form class="login-form" ref="form" @submit.prevent="login">
         <el-form-item prop="email">
           <custom-input
             :label="$t('login.email-placeholder')"
@@ -44,6 +44,8 @@
 
 <script>
 import CustomInput from "./CustomInput";
+import { loginUser, setLoggedUserToken } from "../utils/auth";
+
 export default {
   name: "LoginForm",
   components: {
@@ -51,10 +53,6 @@ export default {
   },
   data() {
     return {
-      validCredentials: {
-        email: "dsc-escom-ipn",
-        password: "password",
-      },
       email: {
         value: "",
         valid: false,
@@ -75,6 +73,30 @@ export default {
     update(payload) {
       this[payload.name].value = payload.value;
       this[payload.name].valid = payload.valid;
+    },
+    async login() {
+      if (!this.valid) {
+        alert("Revisa los datos ingresados");
+        return;
+      }
+      try {
+        this.loading = true;
+        const res = await loginUser({
+          email: this.email.value,
+          password: this.password.value,
+        });
+        this.loading = false;
+        if (res.data.server === "Inicio de sesion exitoso" && res.status === 200) {
+          this.$router.push("/app/products");
+          setLoggedUserToken(res.data.token);
+          return;
+        }
+
+        alert("¡Datos incorrectos! Intentalo de nuevo");
+        throw new Error(res.data.server);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };

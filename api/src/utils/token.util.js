@@ -13,13 +13,15 @@ token.generate = (id) => {
 };
 
 token.verify = async (req, res, next) => {
-  if (req.headers.token === undefined) {
+  const authHeader = req.headers['authorization'];
+  const recivedToken = authHeader && authHeader.split(' ')[1];
+  if (recivedToken === undefined) {
     res.status(401).json({
       server: 'No estas autenticado',
     });
   }
   try {
-    const token = req.headers.token;
+    const token = recivedToken;
     const {id} = jwt.verify(token, process.env.TOKEN_PASS);
     const user = await User.findOne({_id: id});
     if (user === null) {

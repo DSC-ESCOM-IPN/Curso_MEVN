@@ -33,7 +33,7 @@ const router = Router();
  *          200:
  *          description: Regresa el token en el header
  */
-router.get('/product', token.verify, product.get);
+router.get('/product', product.get);
 
 /**
  * @swagger
