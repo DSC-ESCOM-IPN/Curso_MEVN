@@ -87,7 +87,7 @@ export default {
       const res = await logoutUser(this.loggedUser);
       console.log(res);
       if (res.status == 200) {
-        this.$cookies.remove("loggedUserToken");
+        unsetLoggedUserToken();
         this.$router.push("/login");
         return;
       } else {
