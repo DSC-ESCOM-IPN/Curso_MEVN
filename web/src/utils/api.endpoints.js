@@ -34,3 +34,20 @@ export const getUserInfo = () => {
             return error.response;
         });
 };
+
+export const registerOrder = (order) => {
+    const token = getLoggedUserToken();
+    return axios
+        .post(`${process.env.VUE_APP_BASE_API_URL}order`, order, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`
+            }
+        })
+        .then((res) => {
+            return res;
+        })
+        .catch(error => {
+            return error.response;
+        });
+};

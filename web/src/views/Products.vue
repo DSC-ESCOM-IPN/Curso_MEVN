@@ -5,8 +5,7 @@
       <product
         :key="index"
         v-for="(item, index) in products"
-        :name="item.name"
-        :cost="item.cost"
+        :product="item"
         :img_url="img_url(item.image)"
       />
     </el-row>

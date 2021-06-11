@@ -64,7 +64,7 @@ export default {
     };
   },
   created() {
-    if (!this.$store.state.userInfo.email) {
+    if (!this.$store.state.userInfo.email && getLoggedUserToken()) {
       getUserInfo().then((res) => {
         if (res.status && res.status === 200) {
           this.$store.dispatch("registerUser", res.data);

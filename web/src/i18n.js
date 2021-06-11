@@ -26,9 +26,23 @@ function loadNumberFormats() {
     return numbers
 }
 
+function loadDateFormats() {
+    const formats = require.context('./date_formats', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+    const dates = {}
+    formats.keys().forEach(key => {
+        const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+        if (matched && matched.length > 1) {
+            const format = matched[1]
+            dates[format] = formats(key)
+        }
+    })
+    return dates
+}
+
 export default createI18n({
     locale: 'es',
     fallbackLocale: 'en',
     messages: loadLocaleMessages(),
-    numberFormats: loadNumberFormats()
+    numberFormats: loadNumberFormats(),
+    datetimeFormats: loadDateFormats()
 })
