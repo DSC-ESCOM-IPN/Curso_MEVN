@@ -3,7 +3,7 @@ podman  network create -d bridge grafana
 podman pull grafana/grafana:7.5.8-ubuntu
 
 podman run --name grafana-mysql -d \
-  --network controller \
+  --network grafana \
   --network-alias grafana.mysql \
   -e MYSQL_ROOT_PASSWORD=n0m3l0s3 \
   -e MYSQL_DATABASE=grafana \
