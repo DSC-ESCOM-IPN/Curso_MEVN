@@ -1,3 +1,9 @@
+# agregar host al erchiv /etc/hosts/
+
+~~~ bash
+127.0.0.1 mven.dsc-escom.com
+
+~~~
 # Crear red
 ~~~ Bash
 
@@ -35,9 +41,9 @@ podman run -d --name grafana-server \
 # Crear contenedor de nginx 
 ~~~ bash
 
-sudo docker run -d --name grafana-nginx \
-    -p 80:80 \
-    -p 8080:8080 \
+podman run -d --name grafana-nginx \
+    -p 8080:80 \
+    --network grafana \
     --hostname grafana.dsc-escom.com \
     --network-alias nginx.server \
     -v ${PWD}/grafana-site.conf:/etc/nginx/conf.d/grafana-site.conf \
