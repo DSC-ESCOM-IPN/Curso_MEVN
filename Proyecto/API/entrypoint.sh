@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd  Curso_MEVN
+cd  ../
 
 mongorestore --uri="mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@$MONGO_HOST/mydb" ./db
 

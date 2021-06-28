@@ -1,5 +1,6 @@
 # Crear pods
 
+
 ~~~Bash
 
 podman pod create --name pod-mven -p 8080:8080 -p 5000:5000
@@ -15,11 +16,11 @@ Es necesario crear un contenedor y cargar la copia de la base de datos. La copia
 
 
 ~~~ bash
-sudo podman run -d \
+podman run -d \
     --pod pod-mven \
     --name mongo-mven-con \
-    -e MONGO_INITDB_ROOT_USERNAME=mogo-admin \
-    -e MONGO_INITDB_ROOT_PASSWORD=M0ng0P4ss \
+    -e MONGO_INITDB_ROOT_USERNAME=vue-app \
+    -e MONGO_INITDB_ROOT_PASSWORD=dsc-escom-ipn \
     mongo:bionic
 ~~~
 
@@ -30,19 +31,18 @@ Se debe clonar el repositorio y hacer la copia de la base de datos, esto se hara
 ## Crear la imagen
 
 ~~~Bash
-sudo docker build -t api-node-img ./API
+podman build -t api-node-img ./API
 ~~~
 
 ## Crear el contenedor del API
 
 ~~~Bash
-sudo docker run -d \
+podman run -d \
     --pod pod-mven \
     --name api-mven-con \
-    -e MONGO_INITDB_ROOT_USERNAME=mogo-admin \
-    -e MONGO_INITDB_ROOT_PASSWORD=M0ng0P4ss \
+    -e MONGO_INITDB_ROOT_USERNAME=vue-app \
+    -e MONGO_INITDB_ROOT_PASSWORD=dsc-escom-ipn \
     -e MONGO_HOST=127.0.0.1 \
-    -p 5000:5000 \
     -v ${PWD}/API/.env-pod:/Curso_MEVN/api/.env \
     api-node-img
 ~~~
@@ -53,7 +53,7 @@ sudo docker run -d \
 
 ~~~ bash
 
-sudo docker build -t web-node-img ./WEB
+podman build -t web-node-img ./WEB
 
 ~~~
 
@@ -61,10 +61,11 @@ sudo docker build -t web-node-img ./WEB
 
 ~~~Bash
 
-sudo docker run -it \
+podman run -it \
     --pod pod-mven \
     --name web-mven-con \
     -p 8080:8080 \
     -v ${PWD}/WEB/.env-pod:/Curso_MEVN/web/.env \
     web-node-img bash
 ~~~
+
