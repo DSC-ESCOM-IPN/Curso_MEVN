@@ -18,6 +18,7 @@ podman run --name grafana-mysql-pod -d \
 ~~~ Bash
 
 podman run -d --name grafana-server-pod \
-  -v ${PWD}/grafana.ini:/etc/grafana/grafana-pod.ini \
+  --pod pod-grafana \
+  -v ${PWD}/grafana-pod.ini:/etc/grafana/grafana.ini \
   grafana/grafana:7.5.8-ubuntu
 ~~~
