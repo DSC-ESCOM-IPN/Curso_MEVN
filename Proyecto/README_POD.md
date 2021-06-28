@@ -64,7 +64,6 @@ podman build -t web-node-img ./WEB
 podman run -it \
     --pod pod-mven \
     --name web-mven-con \
-    -p 8080:8080 \
     -v ${PWD}/WEB/.env-pod:/Curso_MEVN/web/.env \
     web-node-img bash
 ~~~
