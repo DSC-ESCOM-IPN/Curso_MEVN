@@ -61,10 +61,10 @@ podman build -t web-node-img ./WEB
 
 ~~~Bash
 
-podman run -it \
+podman run -d \
     --pod pod-mven \
     --name web-mven-con \
     -v ${PWD}/WEB/.env-pod:/Curso_MEVN/web/.env \
-    web-node-img bash
+    web-node-img
 ~~~
 
