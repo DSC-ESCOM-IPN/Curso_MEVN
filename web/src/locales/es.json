@@ -1,0 +1,66 @@
+{
+    "login": {
+        "title": "Inicio de sesión",
+        "password-placeholder": "Contraseña",
+        "email-placeholder": "Correo electronico",
+        "forgot-pwd": "¿Olvidaste tú contraseña?",
+        "submitbtn": "Iniciar sesión",
+        "signup-msg": "¿No tienes cuenta aún? ",
+        "signup-link": "Crea una"
+    },
+    "signup": {
+        "title": "Registro",
+        "password-placeholder": "Contraseña",
+        "email-placeholder": "Correo electronico",
+        "passwordconfirm-placeholder": "Confirmar",
+        "name-placeholder": "Nombre",
+        "submitbtn": "Registrarse",
+        "login-msg": "¿Ya tienes una cuenta? ",
+        "login-link": "Inicia Sesión",
+        "psswd-err": "Las contraseñas deben coincidir"
+    },
+    "custom-input": {
+        "required-label": "Requerido",
+        "length-validation": "Debes ingresar {num} caracteres como mínimo"
+    },
+    "nav": {
+        "products-label": "Productos",
+        "login-label": "Iniciar Sesión",
+        "user": {
+            "label": "Usuario",
+            "orders-label": "Ordenes",
+            "profile-label": "Perfil",
+            "logout-label": "Cerrar Sesión"
+        },
+        "cart-label": "Carrito"
+    },
+    "products": {
+        "title": "Productos",
+        "price": "Precio ",
+        "add-to-cart": "Añadir al carrito"
+    },
+    "userorders": {
+        "title": "Ordenes de {usr}",
+        "subtitle": "Ordenes"
+    },
+    "userprofile": {
+        "title": "Perfil de {usr}"
+    },
+    "cart": {
+        "title": "Carrito de compras",
+        "pay": "Pagar"
+    },
+    "order": {
+        "item-label": "Orden de {date}",
+        "image-label": "Imagen",
+        "name-label": "Nombre de Producto",
+        "desc-label": "Descripción",
+        "total-label": "Cantidad",
+        "cost-label": "Precio"
+    },
+    "profile": {
+        "title": "Perfil",
+        "name-label": "Nombre",
+        "email-label": "Correo Electrónico"
+    }
+}

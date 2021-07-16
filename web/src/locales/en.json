@@ -1,0 +1,66 @@
+{
+    "login": {
+        "title": "Login",
+        "password-placeholder": "Password",
+        "email-placeholder": "Email",
+        "forgot-pwd": "Forgot password ?",
+        "submitbtn": "Login",
+        "signup-msg": "Not an account yet? ",
+        "signup-link": "Create one"
+    },
+    "signup": {
+        "title": "SignUp",
+        "password-placeholder": "Password",
+        "email-placeholder": "Email",
+        "passwordconfirm-placeholder": "Confirm",
+        "name-placeholder": "Name",
+        "submitbtn": "Signup",
+        "login-msg": "An account already? ",
+        "login-link": "login",
+        "psswd-err": "Passwords must match"
+    },
+    "custom-input": {
+        "required-label": "Required",
+        "length-validation": "You must enter {num} characters minimum"
+    },
+    "nav": {
+        "products-label": "Products",
+        "login-label": "Login",
+        "user": {
+            "label": "User",
+            "orders-label": "Orders",
+            "profile-label": "Profile",
+            "logout-label": "Logout"
+        },
+        "cart-label": "Cart"
+    },
+    "products": {
+        "title": "Products",
+        "price": "Price ",
+        "add-to-cart": "Add to cart"
+    },
+    "userorders": {
+        "title": "{usr} Orders",
+        "subtitle": "Orders"
+    },
+    "userprofile": {
+        "title": "{usr} Profile"
+    },
+    "cart": {
+        "title": "Cart",
+        "pay": "Pay"
+    },
+    "order": {
+        "item-label": "Order of {date}",
+        "image-label": "Image",
+        "name-label": "Product Name",
+        "desc-label": "Description",
+        "total-label": "Amount",
+        "cost-label": "Price"
+    },
+    "profile": {
+        "title": "Profile",
+        "name-label": "Name",
+        "email-label": "Email"
+    }
+}
