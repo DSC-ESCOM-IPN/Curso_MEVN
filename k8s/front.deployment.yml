@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cart-front
+  name: cart-front
+spec:
+  selector:
+    matchLabels:
+      app: cart-front
+  template:
+    metadata:
+      labels:
+        app: cart-front
+    spec:
+      containers:
+        - env:
+            - name: NODE_ENV
+              valueFrom:
+                secretKeyRef:
+                  key: node-env
+                  name: web-env
+            - name: VUE_APP_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: vue-app-base-url
+                  name: web-env
+            - name: VUE_APP_BASE_API_URL
+              valueFrom:
+                secretKeyRef:
+                  key: vue-app-base-api-url
+                  name: web-env
+          image: dsc-escom-ipn/cart-web:1.0
+          imagePullPolicy: IfNotPresent
+          name: cart-web
+          ports:
+            - containerPort: 80

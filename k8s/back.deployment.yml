@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cart-back
+  name: cart-back
+spec:
+  selector:
+    matchLabels:
+      app: cart-back
+  template:
+    metadata:
+      labels:
+        app: cart-back
+    spec:
+      containers:
+        - env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  key: db-user
+                  name: api-env
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: db-host
+                  name: api-env
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: db-port
+                  name: api-env
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: db-name
+                  name: api-env
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  key: db-pass
+                  name: api-env
+            - name: TOKEN_PASS
+              valueFrom:
+                secretKeyRef:
+                  key: token-pass
+                  name: api-env
+          image: dsc-escom-ipn/cart-api:1.0
+          imagePullPolicy: IfNotPresent
+          name: cart-back
+          ports:
+            - containerPort: 5000

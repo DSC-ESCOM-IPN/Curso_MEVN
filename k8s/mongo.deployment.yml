@@ -1,0 +1,131 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: mongo-env
+  name: mongo-env
+
+data:
+  MONGODB_DBNAME: mydb
+  MONGODB_ROLE: readWrite
+  MONGODB_ROOT_ROLE: root
+  MONGODB_ROOT_USERNAME: dbadmin
+  MONGODB_USERNAME: vue-app
+
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  local:
+    path: /tmp/data/db
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - kind-control-plane
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: cart-db
+  name: cart-db
+spec:
+  serviceName: cart-db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart-db
+  template:
+    metadata:
+      labels:
+        app: cart-db
+    spec:
+      volumes:
+        - name: mongo-volume
+          persistentVolumeClaim:
+            claimName: mongo-pvc
+      containers:
+        - env:
+            - name: MONGODB_DBNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_DBNAME
+                  name: mongo-env
+
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: db-pass
+                  name: api-env
+
+            - name: MONGODB_ROLE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_ROLE
+                  name: mongo-env
+
+            - name: MONGODB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: db-pass
+                  name: api-env
+
+            - name: MONGODB_ROOT_ROLE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_ROOT_ROLE
+                  name: mongo-env
+            - name: MONGODB_ROOT_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_ROOT_USERNAME
+                  name: mongo-env
+            - name: MONGODB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_USERNAME
+                  name: mongo-env
+          image: dsc-escom-ipn/mongo:1.0
+          imagePullPolicy: IfNotPresent
+          name: mongo
+          ports:
+            - containerPort: 27017
+          resources: {}
+          volumeMounts:
+            - name: mongo-volume
+              mountPath: /data/db

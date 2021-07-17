@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-front-service
+  labels:
+    app: cart-front
+spec:
+  selector:
+    app: cart-front
+  type: LoadBalancer
+  ports:
+    - name: "80"
+      port: 80
+      targetPort: 80
